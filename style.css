@@ -1,0 +1,39 @@
+*{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Headers styles */
+.header{
+    color: gray;
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    /* border: 1px solid red; */
+    box-shadow: 0px -10px 20px black;
+}
+
+.logo{
+    height: 30px;
+    width: auto;
+}
+.urls{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+}
+.urls a{
+    color: gray;
+    text-decoration: none;
+}
+
+/* Game UI styles */
