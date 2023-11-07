@@ -5,14 +5,15 @@
 }
 
 body{
+    background-color: lightgray;
     margin: 0;
     padding: 0;
 }
 
 /* Headers styles */
 .header{
-    color: gray;
-    background-color: beige;
+    color: darkslategray;
+    background-color: whitesmoke;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,8 +33,30 @@ body{
     gap: 15px;
 }
 .urls a{
-    color: gray;
+    color: dimgray;
     text-decoration: none;
 }
 
 /* Game UI styles */
+
+.game-ui{
+    display: flex;
+    flex-direction: column;
+}
+
+.gameScores-ui{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.gameChoice-ui{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.whoWin{
+    text-align: center;
+}

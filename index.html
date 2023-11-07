@@ -17,12 +17,31 @@
     </div>
 
     <div class="game-ui">
-        <div class="gameScores-ui"></div>
-        <div class="computerChoice-ui"></div>
-        <div class="playerChoice-ui">
-            <button class="rock">Rock</button>
-            <button class="paper">Paper</button>
-            <button class="Scissors">Scissors</button>
+        <div class="gameScores-ui">
+            <div class="playerScore-ui">
+                <p>Player Score:</p>
+                <p>0</p>
+            </div>
+            <div class="computerScore-ui">
+                <p>Computer Score:</p>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class="gameChoice-ui">
+            <div class="computerChoice-ui">
+                <p>Computer Choose:</p>
+                <p>none</p>
+            </div>
+            <div class="playerChoice-ui">
+                <p>Player Choose:</p>
+                <button class="playerChoice" id="rock">Rock</button>
+                <button class="playerChoice" id="paper">Paper</button>
+                <button class="playerChoice" id="Scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="whoWin">
+            Player Win
         </div>
     </div>
 </body>

@@ -1,6 +1,5 @@
 const RPC = ["rock", "paper", "scissors"];
 
-
 function getComputerChoice(){
     return RPC[Math.floor(Math.random() * RPC.length)];
 }
@@ -28,6 +27,28 @@ function startRound(){
         return "Player Win";
     }
 }
+
+
+const playButton = document.getElementsByClassName("playerChoice")
+console.log(playButton)
+playButton.addEventListener("click", startRound)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Obselete function
 // function bo5Game(){
