@@ -4,77 +4,61 @@ function getComputerChoice(){
     return RPC[Math.floor(Math.random() * RPC.length)];
 }
 
-function getPlayerChoice(){
-    var choice = prompt("Choose between Rock, Paper, and Scissors!").toLowerCase();
-    if (choice == null || !RPC.includes(choice)){
-        return RPC[Math.floor(Math.random() * RPC.length)];
-    }
-    else{
-        return choice;
+function startRound(e){
+    var playerScore = parseInt(document.querySelector("#playerScores").textContent)
+    var computerScore = parseInt(document.querySelector("#computerScores").textContent)
+    if (playerScore !== 5 && computerScore !== 5){
+        const Player = e.target.id
+        var Computer = getComputerChoice();
+        if (Computer == "rock" && Player == "rock" || Computer == "paper" && Player == "paper" || Computer == "scissors" && Player == "scissors"){
+            roundResults = "Draw";
+        }
+        else if (Computer == "rock" && Player == "scissors" || Computer == "paper" && Player == "rock" || Computer == "scissors" && Player == "paper"){
+            roundResults = "Computer Win";
+        }
+        else{
+            roundResults = "Player Win";
+        }
+        
+        if (roundResults == "Computer Win"){
+            playerScore++
+        }
+        else if (roundResults == "Player Win"){
+            computerScore++
+        }
+        else{
+        }
+     
+        document.querySelector("#whoWin").textContent = roundResults
+        document.querySelector("#computerChoice").textContent = (Computer[0].toUpperCase() + Computer.substring(1))
+        document.querySelector("#playerScores").textContent = String(playerScore)
+        document.querySelector("#computerScores").textContent = String(computerScore)
+        
+        const resetBtn = document.createElement("button")
+        resetBtn.className = "resetButton"
+        resetBtn.textContent = "Reset Match"
+        resetBtn.onclick = (e) => {
+            document.querySelector("#playerScores").textContent = "0"
+            document.querySelector("#computerScores").textContent = "0"
+            e.target.remove()
+            document.querySelector("#whoWin").textContent = ""
+        }
+
+        if (computerScore==5){
+            matchResults = "Computer Win The Match"
+            document.querySelector("#whoWin").textContent = matchResults
+            document.querySelector(".whoWin").appendChild(resetBtn)
+        }
+        else if (playerScore==5){
+            matchResults = "Player Win The Match"
+            document.querySelector("#whoWin").textContent = matchResults
+            document.querySelector(".whoWin").appendChild(resetBtn)
+        }
     }
 }
+    
 
-function startRound(){
-    var Player = getPlayerChoice();
-    var Computer = getComputerChoice();
-    if (Computer == "rock" && Player == "rock" || Computer == "paper" && Player == "paper" || Computer == "scissors" && Player == "scissors"){
-        return "Draw";
-    }
-    else if (Computer == "rock" && Player == "scissors" || Computer == "paper" && Player == "rock" || Computer == "scissors" && Player == "paper"){
-        return "Computer Win";
-    }
-    else{
-        return "Player Win";
-    }
-}
-
-
-const playButton = document.getElementsByClassName("playerChoice")
-console.log(playButton)
-playButton.addEventListener("click", startRound)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Obselete function
-// function bo5Game(){
-//     var computerScores = 0;
-//     var playerScores = 0;
-//     while (true){
-//         console.log("Computer Scores:", computerScores)
-//         console.log("Player Scores:", playerScores)
-//         roundWinner = startRound();
-//         if (roundWinner == "Computer Win"){
-//             console.log(roundWinner)
-//             computerScores++
-//         }
-//         else if (roundWinner == "Player Win"){
-//             console.log(roundWinner)
-//             playerScores++
-//         }
-//         else{
-//             console.log(roundWinner)
-//         }
-
-//         if (computerScores == 5){
-//             return "Computer Win The Match"
-//         }
-//         else if (playerScores == 5){
-//             return "Player Win The Match"
-//         }
-//     }
-// }
+const chooseButton = document.querySelectorAll(".playerChoice")
+chooseButton.forEach((playButton) => {
+    playButton.addEventListener("click", (e) => startRound(e))
+});

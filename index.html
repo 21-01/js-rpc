@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rpc.js"></script>
+    <script src="rpc.js" defer></script>
     <title>21-01 Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,28 +20,28 @@
         <div class="gameScores-ui">
             <div class="playerScore-ui">
                 <p>Player Score:</p>
-                <p>0</p>
+                <p id="playerScores">0</p>
             </div>
             <div class="computerScore-ui">
                 <p>Computer Score:</p>
-                <p>0</p>
+                <p id="computerScores">0</p>
             </div>
         </div>
-
+        
         <div class="gameChoice-ui">
             <div class="computerChoice-ui">
                 <p>Computer Choose:</p>
-                <p>none</p>
+                <p id="computerChoice">none</p>
             </div>
             <div class="playerChoice-ui">
                 <p>Player Choose:</p>
                 <button class="playerChoice" id="rock">Rock</button>
                 <button class="playerChoice" id="paper">Paper</button>
-                <button class="playerChoice" id="Scissors">Scissors</button>
+                <button class="playerChoice" id="scissors">Scissors</button>
             </div>
         </div>
         <div class="whoWin">
-            Player Win
+            <p id="whoWin"></p>
         </div>
     </div>
 </body>
