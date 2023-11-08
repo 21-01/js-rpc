@@ -1,0 +1,65 @@
+*{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+body{
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headers styles */
+.header{
+    color: darkslategray;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    /* border: 1px solid red; */
+    box-shadow: 0px -10px 20px black;
+}
+
+.logo{
+    height: 30px;
+    width: auto;
+}
+.urls{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+}
+.urls a{
+    color: dimgray;
+    text-decoration: none;
+}
+
+/* Game UI styles */
+
+.game-ui{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+}
+
+.gameScores-ui{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.gameChoice-ui{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.whoWin{
+    text-align: center;
+}

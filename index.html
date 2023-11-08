@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rpc.js"></script>
-    <title>Document</title>
+    <script src="rpc.js" defer></script>
+    <title>21-01 Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Rock Paper Scissors
+    <div class="header">
+        <img src="Untitled.svg" alt="21-01 Logo" class="logo">
+        <ul class="urls">
+            <li><a href="">Home</a></li>
+            <li><a href="">Github</a></li>
+        </ul>
+    </div>
+
+    <div class="game-ui">
+        <div class="gameScores-ui">
+            <div class="playerScore-ui">
+                <p>Player Score:</p>
+                <p id="playerScores">0</p>
+            </div>
+            <div class="computerScore-ui">
+                <p>Computer Score:</p>
+                <p id="computerScores">0</p>
+            </div>
+        </div>
+        
+        <div class="gameChoice-ui">
+            <div class="computerChoice-ui">
+                <p>Computer Choose:</p>
+                <p id="computerChoice">none</p>
+            </div>
+            <div class="playerChoice-ui">
+                <p>Player Choose:</p>
+                <button class="playerChoice" id="rock">Rock</button>
+                <button class="playerChoice" id="paper">Paper</button>
+                <button class="playerChoice" id="scissors">Scissors</button>
+            </div>
+        </div>
+        <div class="whoWin">
+            <p id="whoWin"></p>
+        </div>
+    </div>
 </body>
 </html>
